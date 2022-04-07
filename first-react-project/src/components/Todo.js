@@ -22,7 +22,11 @@ function Todo(props) {
         </button>
       </div>
 
-      {modalIsOpen ? <Modal cancelBtn={hideModal} /> : false}
+      {modalIsOpen ? (
+        <Modal cancelBtn={hideModal} onConfirm={hideModal} />
+      ) : (
+        false
+      )}
       {modalIsOpen ? <Backdrop onClick={hideModal} /> : false}
     </div>
   );
